@@ -1,6 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import Svg, { Circle, Rect } from 'react-native-svg';
+import Animated from 'react-native-reanimated';
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 type RingProgrssProps = {
     radius?: number,
@@ -38,7 +41,7 @@ const RingProgress = ({
                     opacity={0.2}
                 />
                 {/* Foreground */}
-                <Circle
+                <AnimatedCircle
                     cx={radius}
                     cy={radius}
                     originX={radius}
